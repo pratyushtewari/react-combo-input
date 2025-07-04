@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+body {
+    background:
+        url("/noise.png"),
+        radial-gradient(circle at right center, #4b296980, #563277 25%, #4a378c 40%, #4066a8 65%, #32517380);
+}
+
+.bg-sdf {
+    @apply
+    bg-transparent
+    flex
+    w-full
+    items-center
+    gap-2
+    rounded-lg
+    px-3
+    py-1.5
+    data-focus:bg-white/10;
+}
+
+.menuTagbutton
+{
+    @apply
+    inline-flex
+    items-center
+    gap-2
+    rounded-md
+    bg-gray-800
+    px-3
+    py-1.5
+    text-sm/6
+    font-semibold
+    text-white
+    shadow-inner
+    shadow-white/10
+    focus:not-data-focus:outline-none
+    data-focus:outline
+    data-focus:outline-white
+    data-hover:bg-gray-700
+    data-open:bg-gray-700;
+}
+
+.menuTagItems {
+    @apply w-52 origin-top-right
+    rounded-xl
+    border
+    border-white/5
+    bg-black/50
+    backdrop-blur-md
+    p-1
+    text-sm/6
+    text-white
+    transition
+    duration-100
+    ease-out
+    [--anchor-gap:--spacing(1)]
+    focus:outline-none
+    data-closed:scale-95
+    data-closed:opacity-0;
+}
+.tag-button
+{
+
+    @apply px-2 py-2.5 rounded-none bg-transparent hover:bg-black/20 focus:bg-white/10;
+}
+.gggg {
+    @apply backdrop-blur-xl w-52 origin-top-right
+  rounded-xl border border-white/5 p-1
+  text-sm/6 text-white transition
+   duration-100 ease-out [--anchor-gap:--spacing(1)]
+   focus:outline-none data-closed:scale-95
+   data-closed:opacity-0 bg-black/50;
+}
