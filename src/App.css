@@ -1,5 +1,38 @@
 @import "tailwindcss";
 
+.menu_button {
+    /* attr(background_color); */
+    @apply inline-flex
+    items-center
+    gap-2
+    rounded-l-xl
+    rounded-r-none
+    px-3
+    py-1.5
+    text-sm/6
+    font-semibold
+    text-white
+    focus:not-data-focus:outline-none
+    data-focus:outline
+    data-focus:outline-white
+    data-hover:bg-gray-700
+    data-open:bg-gray-700;
+}
+.tag_close_button {
+    @apply px-2
+    border-l-white/5
+    rounded-r-xl
+    rounded-l-none;
+}
+.menu_items {
+    @apply backdrop-blur-md w-52 origin-top-right rounded-xl border border-white/5 bg-black/50 p-1 text-sm/6 text-white transition duration-100 ease-out [--anchor-gap:--spacing(1)] focus:outline-none data-closed:scale-95 data-closed:opacity-0;
+}
+.menu_item {
+    @apply bg-transparent  flex w-full items-center gap-2 rounded-lg px-3 py-1.5 data-focus:bg-white/10;
+}
+.menu_item_shortcut {
+    @apply ml-auto  font-sans text-xs text-white/50;
+}
 #root {
     max-width: 1280px;
     margin: 0 auto;
@@ -7,75 +40,38 @@
     text-align: center;
 }
 
-body {
-    background:
-        url("/noise.png"),
-        radial-gradient(circle at right center, #4b296980, #563277 25%, #4a378c 40%, #4066a8 65%, #32517380);
+.logo {
+    height: 6em;
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
+}
+.logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+    filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-.bg-sdf {
-    @apply
-    bg-transparent
-    flex
-    w-full
-    items-center
-    gap-2
-    rounded-lg
-    px-3
-    py-1.5
-    data-focus:bg-white/10;
+@keyframes logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
-.menuTagbutton
-{
-    @apply
-    inline-flex
-    items-center
-    gap-2
-    rounded-md
-    bg-gray-800
-    px-3
-    py-1.5
-    text-sm/6
-    font-semibold
-    text-white
-    shadow-inner
-    shadow-white/10
-    focus:not-data-focus:outline-none
-    data-focus:outline
-    data-focus:outline-white
-    data-hover:bg-gray-700
-    data-open:bg-gray-700;
+@media (prefers-reduced-motion: no-preference) {
+    a:nth-of-type(2) .logo {
+        animation: logo-spin infinite 20s linear;
+    }
 }
 
-.menuTagItems {
-    @apply w-52 origin-top-right
-    rounded-xl
-    border
-    border-white/5
-    bg-black/50
-    backdrop-blur-md
-    p-1
-    text-sm/6
-    text-white
-    transition
-    duration-100
-    ease-out
-    [--anchor-gap:--spacing(1)]
-    focus:outline-none
-    data-closed:scale-95
-    data-closed:opacity-0;
+.card {
+    padding: 2em;
 }
-.tag-button
-{
 
-    @apply px-2 py-2.5 rounded-none bg-transparent hover:bg-black/20 focus:bg-white/10;
-}
-.gggg {
-    @apply backdrop-blur-xl w-52 origin-top-right
-  rounded-xl border border-white/5 p-1
-  text-sm/6 text-white transition
-   duration-100 ease-out [--anchor-gap:--spacing(1)]
-   focus:outline-none data-closed:scale-95
-   data-closed:opacity-0 bg-black/50;
+.read-the-docs {
+    color: #888;
 }

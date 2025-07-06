@@ -1,28 +1,45 @@
-import { ArchiveBoxXMarkIcon, Square2StackIcon, TrashIcon } from "@heroicons/react/16/solid";
 import "./App.css";
-import MenuTag from "./components/MenuTag";
-import { Button } from "@headlessui/react";
-import { useState } from "react";
+import TagMenu from "./components/TagMenu";
+
+import { PencilIcon, TrashIcon, ArchiveBoxXMarkIcon } from "@heroicons/react/24/solid";
 
 function App() {
-  const [selected, setSelected] = useState(false);
-  const menuItems = [
-    { id: "sdfsdf", icon: <TrashIcon className="size-4 fill-white/30" />, label: "Hello", shortcut: "⌘D" },
-    { id: "423erw", icon: <Square2StackIcon className="size-4 fill-white/30" />, label: "Nahi Nahi", shortcut: "⌘T" },
-    {
-      id: "sdfsewrt234df",
-      isdivider: true,
-      icon: <ArchiveBoxXMarkIcon className="size-4 fill-white/30" />,
-      label: "Yaar sahi hai",
-      shortcut: "⌘F",
-    },
-  ];
   return (
     <>
-      <div className="flex m-auto justify-center">
-        <MenuTag id="erewriopew" label="Test" menuItems={menuItems} isActive={selected}></MenuTag>
-        <Button  onClick={() => setSelected(!selected)} >Toggle</Button>
-      </div>
+      <TagMenu
+        id="yoiuyiuoiug"
+        label="Tag Menu"
+        colorName="!bg-indigo-500"
+        items={[
+          {
+            id: "edit",
+            label: "Edit",
+            icon: <PencilIcon className="size-4 fill-white/60" />,
+            shortcut: "⌘E",
+          },
+          { id: "divider-1", label: "" },
+          {
+            id: "delete",
+            label: "Delete",
+            icon: <TrashIcon className="size-4 fill-white/60" />,
+            shortcut: "⌘D",
+          },
+          { id: "divider-2", label: "" },
+          {
+            id: "Archive",
+            label: "Archive",
+            icon: <ArchiveBoxXMarkIcon className="size-4 fill-white/60" />,
+            shortcut: "⌘R",
+          },
+          {
+            id: "Archivedss",
+            label: "Archive",
+            icon: <ArchiveBoxXMarkIcon className="size-4 fill-white/60" />,
+          },
+        ]}
+      />
+      <div className="space-y-4">----</div>
+      <TagMenu id="yoiuyiuosdffiug" label="Tag no menu" colorName="!bg-red-700" />
     </>
   );
 }
