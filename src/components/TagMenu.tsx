@@ -15,6 +15,7 @@ interface Props {
   isActive?: boolean;
   items?: PropsMenuItem[];
   colorName: string;
+  onDelete: (id: string) => void;
 }
 
 function GetMenuItem({ id, label, icon, shortcut }: PropsMenuItem) {
@@ -55,12 +56,12 @@ function TagPart({ id, label, isActive, items, colorName }: Props) {
   );
 }
 
-function TagMenu({ id, label, isActive, items, colorName }: Props) {
+function TagMenu({ id, label, isActive, items, colorName, onDelete }: Props) {
   return (
     <div className="flex">
-      <TagPart id={id} label={label} isActive={isActive} items={items} colorName={colorName} />
+      <TagPart id={id} label={label} isActive={isActive} items={items} colorName={colorName} onDelete={onDelete} />
       <div className="flex"></div>
-      <button className={`tag_close_button ${colorName}`}>
+      <button className={`tag_close_button ${colorName}`} onClick={() => onDelete(id)}>
         <XMarkIcon className="size-4 fill-white/60" />
       </button>
     </div>
