@@ -2,14 +2,14 @@ import type { JSX } from "react";
 import { Menu, MenuItem, MenuButton, MenuItems } from "@headlessui/react";
 import { ChevronDownIcon, XMarkIcon } from "@heroicons/react/24/solid";
 
-interface PropsMenuItem {
+export interface PropsMenuItem {
   id: string;
   label: string;
   icon?: JSX.Element;
   shortcut?: string;
 }
 
-interface Props {
+export interface PropsTagMenu {
   id: string;
   label: string;
   isActive?: boolean;
@@ -31,7 +31,7 @@ function GetMenuItem({ id, label, icon, shortcut }: PropsMenuItem) {
   );
 }
 
-function TagPart({ id, label, isActive, items, colorName }: Props) {
+function TagPart({ id, label, isActive, items, colorName }: PropsTagMenu) {
   if (!items)
     return (
       <div key={id} className={` menu_button ${isActive ? "active" : ""}  ${colorName}`}>
@@ -56,7 +56,7 @@ function TagPart({ id, label, isActive, items, colorName }: Props) {
   );
 }
 
-function TagMenu({ id, label, isActive, items, colorName, onDelete }: Props) {
+function TagMenu({ id, label, isActive, items, colorName, onDelete }: PropsTagMenu) {
   return (
     <div className="flex">
       <TagPart id={id} label={label} isActive={isActive} items={items} colorName={colorName} onDelete={onDelete} />
